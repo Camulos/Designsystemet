@@ -11,10 +11,11 @@ module.exports = {
     extensions: [".js"],
   },
   externals: [
+    /* Fjerner node-module imports fra bundle, slik at eks react ikke blir bundlet med */
     nodeExternals({
       /* Check for deps from package.json */
       /* modulesFromFile: true,
       allowlist: ["@navikt/ds-icons"], */
     }),
-  ], // <-- Important
+  ],
 };
