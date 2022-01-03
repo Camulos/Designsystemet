@@ -6,16 +6,23 @@ module.exports = {
     filename: "bundle.js", // <-- Important
     libraryTarget: "this", // <-- Important
   },
-  target: "node", // <-- Important
+  /* target: "node", // <-- Important */
   resolve: {
     extensions: [".js"],
   },
   externals: [
     /* Fjerner node-module imports fra bundle, slik at eks react ikke blir bundlet med */
     nodeExternals({
+      /* modulesDir: "./node_modules",
+      additionalModuleDirs: ["../../../node_modules"], */
+      /* modulesFromFile: true, */
       /* Check for deps from package.json */
-      /* modulesFromFile: true,
-      allowlist: ["@navikt/ds-icons"], */
+      /* ,
+       */
+      allowlist: ["@navikt/ds-icons"],
+      /* modulesFromFile: {
+        includeInBundle: ["crypto"],
+      }, */
     }),
   ],
 };
