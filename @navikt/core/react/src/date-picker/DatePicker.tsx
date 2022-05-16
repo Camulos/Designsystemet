@@ -1,50 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import { addMonths } from "date-fns";
+import { DateRange, DayPicker, ClassNames } from "react-day-picker";
+import { NAVDSFooter } from "./components";
 
-const DatePicker = () => {
-  return <div>hello world, lets date pick</div>;
-};
+import styles from "react-day-picker/dist/style.module.css";
+import "../../../../core/css/date-picker.css";
 
-export default DatePicker;
+export const DatePicker = () => {
+  const classNames: ClassNames = {
+    ...styles,
+    day: "navds-date-picker__day",
+    // cell: "navds-date-picker__day-cell",
+    // row: "navds-date-picker__row",
+    // tbody: "navds-date-picker__tbody",
+  };
 
-/*
-import { useState } from "react";
-
-import { addDays, format } from "date-fns";
-import { DateRange, DayPicker } from "react-day-picker";
-
-const pastMonth = new Date(2020, 10, 15);
-
-export default function App() {
+  const pastMonth = new Date(2022, 4, 17);
   const defaultSelected: DateRange = {
     from: pastMonth,
-    to: addDays(pastMonth, 4)
+    to: addMonths(pastMonth, 1),
   };
 
   const [range, setRange] = useState<DateRange | undefined>(defaultSelected);
-  const isoDate = (date: Date) => format(date, "yyyy-MM-dd");
-
-  let footer = <p>Please pick the first day.</p>;
-  if (range?.from) {
-    console.log(range.from);
-    if (!range.to) footer = <p>{isoDate(range.from)}</p>;
-    else if (range.to)
-      footer = (
-        <p>
-          {isoDate(range.from)} – {isoDate(range.to)}
-        </p>
-      );
-  }
 
   return (
     <DayPicker
       captionLayout="dropdown"
       mode="range"
+      classNames={classNames}
       defaultMonth={pastMonth}
       selected={range}
-      footer={footer}
+      footer={<NAVDSFooter range />}
       numberOfMonths={2}
       onSelect={setRange}
     />
   );
-}
- */
+};
+
+export default DatePicker;

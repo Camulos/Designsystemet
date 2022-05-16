@@ -1,3 +1,14 @@
+:root {
+  --navds-date-picker-cell-size: 46px;
+}
+
 .navds-date-picker {
   border: 1pc solid red;
+}
+
+/* Specificity is needed to not be overriden by default styles */
+tbody > tr > td > .navds-date-picker__day {
+  width: var(--navds-date-picker-cell-size);
+  height: var(--navds-date-picker-cell-size);
+  margin: 2px;
 }
