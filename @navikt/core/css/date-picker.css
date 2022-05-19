@@ -1,14 +1,221 @@
+/*=============================================
+*
+*                 date-picker                  
+*
+*============================================*/
+
 :root {
   --navds-date-picker-cell-size: 46px;
 }
 
 .navds-date-picker {
-  border: 1pc solid red;
+  outline: 1px solid red;
 }
 
-/* Specificity is needed to not be overriden by default styles */
-tbody > tr > td > .navds-date-picker__day {
-  width: var(--navds-date-picker-cell-size);
-  height: var(--navds-date-picker-cell-size);
-  margin: 2px;
+/* Hide elements for non-screen-readers */
+.navds-date-picker__vhidden {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute !important;
+  top: 0;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  border: 0 !important;
+}
+
+/*----------  Component wrappers  ----------*/
+.navds-date-picker__months {
+  display: flex;
+}
+
+.navds-date-picker__month {
+  margin: 0 1em;
+}
+
+.navds-date-picker__month:first-child {
+  margin-left: 0;
+}
+
+.navds-date-picker__month:last-child {
+  margin-right: 0;
+}
+
+/*===============================
+=        Button baseline        =
+===============================*/
+.navds-date-picker__button_reset {
+  appearance: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  cursor: default;
+  color: inherit;
+  outline: none;
+  background: none;
+  font: inherit;
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.navds-date-picker__button {
+  border: 1px solid transparent;
+}
+
+.navds-date-picker__button_reset[aria-disabled="true"] {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.navds-date-picker__button_reset:not([aria-disabled="true"]) {
+  cursor: pointer;
+}
+
+.navds-date-picker__:focus,
+.navds-date-picker__:active {
+  color: inherit;
+  border: ;
+  background-color: ;
+}
+
+.navds-date-picker__:hover:not([aria-disabled="true"]) {
+  background-color: ;
+}
+
+/*==============================================
+=   Caption (heading, nav, label, dropdowns)   =
+==============================================*/
+
+.navds-date-picker__caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  text-align: left;
+}
+
+.navds-date-picker__multiple_months .navds-date-picker__caption {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+/*----------  Label  ----------*/
+
+.navds-date-picker__caption_label {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 0.25em;
+  white-space: nowrap;
+  color: inherit;
+  border: 0;
+  border: 2px solid transparent;
+  font-family: inherit;
+  font-size: 140%;
+  font-weight: bold;
+}
+
+.navds-date-picker__dropdown:focus:not([disabled])
+  + .navds-date-picker__caption_label,
+.navds-date-picker__dropdown:active:not([disabled])
+  + .navds-date-picker__caption_label {
+  border: ;
+  border-radius: 6px;
+  background-color: ;
+}
+
+/*----------  Navigation  ----------*/
+
+.navds-date-picker__nav {
+  white-space: nowrap;
+}
+
+.navds-date-picker__multiple_months
+  .navds-date-picker__caption_start
+  .navds-date-picker__nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.navds-date-picker__multiple_months
+  .navds-date-picker__caption_end
+  .navds-date-picker__nav {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.navds-date-picker__nav_button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: ;
+  height: ;
+  padding: 0.25em;
+  border-radius: 100%;
+}
+
+/*----------  Dropdown  ----------*/
+
+.navds-date-picker__caption_dropdowns {
+  position: relative;
+  display: inline-flex;
+}
+
+.navds-date-picker__dropdown_year,
+.navds-date-picker__dropdown_month {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.navds-date-picker__dropdown {
+  appearance: none;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: inherit;
+  opacity: 0;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.navds-date-picker__dropdown[disabled] {
+  opacity: unset;
+  color: unset;
+}
+
+.navds-date-picker__dropdown:focus:not([disabled])
+  + .navds-date-picker__caption_label,
+.navds-date-picker__dropdown:active:not([disabled])
+  + .navds-date-picker__caption_label {
+  border: ;
+  border-radius: 6px;
+  background-color: ;
+}
+
+.navds-date-picker__dropdown_icon {
+  margin: 0 0 0 5px;
 }

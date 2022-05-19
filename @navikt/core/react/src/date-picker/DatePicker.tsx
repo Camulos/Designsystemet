@@ -1,21 +1,13 @@
 import React, { useState } from "react";
 import { addMonths } from "date-fns";
-import { DateRange, DayPicker, ClassNames } from "react-day-picker";
-import { NAVDSFooter } from "./components";
-
-import styles from "react-day-picker/dist/style.module.css";
-import "../../../../core/css/date-picker.css";
+import { DateRange, DayPicker } from "react-day-picker";
+import Footer from "./Footer";
+import datePickerClassNames from "./datePickerClassNames";
 
 export const DatePicker = () => {
-  const classNames: ClassNames = {
-    ...styles,
-    day: "navds-date-picker__day",
-    // cell: "navds-date-picker__day-cell",
-    // row: "navds-date-picker__row",
-    // tbody: "navds-date-picker__tbody",
-  };
+  // TODO: allow both Date and iso-string from user
+  const pastMonth = new Date("2022-04-17");
 
-  const pastMonth = new Date(2022, 4, 17);
   const defaultSelected: DateRange = {
     from: pastMonth,
     to: addMonths(pastMonth, 1),
@@ -27,10 +19,10 @@ export const DatePicker = () => {
     <DayPicker
       captionLayout="dropdown"
       mode="range"
-      classNames={classNames}
+      classNames={datePickerClassNames}
       defaultMonth={pastMonth}
       selected={range}
-      footer={<NAVDSFooter range />}
+      footer={<Footer range={range} />}
       numberOfMonths={2}
       onSelect={setRange}
     />
