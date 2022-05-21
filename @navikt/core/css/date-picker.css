@@ -62,6 +62,7 @@
   -moz-appearance: none;
   -webkit-appearance: none;
 }
+
 .navds-date-picker__button {
   border: 1px solid transparent;
 }
@@ -105,7 +106,7 @@
   white-space: nowrap;
   color: inherit;
   border: 0;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   font-family: inherit;
   font-size: 140%;
   font-weight: bold;
@@ -267,57 +268,38 @@
   width: var(--navds-date-picker-cell-size);
   max-width: var(--navds-date-picker-cell-size);
   height: var(--navds-date-picker-cell-size);
-  margin: 0;
-  border: 2px solid transparent;
-  border-radius: 100%;
+  margin: 2px;
+  border: 1px solid transparent;
+  color: var(--navds-semantic-color-text);
+  border-radius: 4px;
 }
 
 .navds-date-picker__day_today:not(.navds-date-picker__day_outside) {
-  font-weight: bold;
+  font-weight: 600;
 }
 
-/* ----- day__selected and day__range ----- */
+/* ----- selected days (incl. range-start range-end), range middle ----- */
 
-.navds-date-picker__day_selected:not([aria-disabled="true"]),
+/* .navds-date-picker__day_selected:not([aria-disabled="true"]),
 .navds-date-picker__day_selected:focus:not([aria-disabled="true"]),
 .navds-date-picker__day_selected:active:not([aria-disabled="true"]),
-.navds-date-picker__day_selected:hover:not([aria-disabled="true"]) {
-  color: var(--navds-semantic-text);
-  background-color: var(--navds-global-color-blue-50);
+.navds-date-picker__day_selected:hover:not([aria-disabled="true"]), */
+
+.navds-date-picker__day_range_start:not([aria-disabled="true"]),
+.navds-date-picker__day_range_end:not([aria-disabled="true"]) {
+  color: var(--navds-semantic-color-text-inverted);
+  background-color: var(--navds-semantic-color-interaction-primary-selected);
+  font-weight: 600;
 }
 
-.navds-date-picker__day_selected:focus:not([aria-disabled="true"]) {
+.navds-date-picker__day:hover:not(.navds-date-picker__day_range_start):not(.navds-date-picker__day_range_end):not([aria-disabled="true"]) {
   border: 1px solid var(--navds-semantic-color-interaction-primary-selected);
 }
 
-.navds-date-picker:not([dir="rtl"])
-  .navds-date-picker__day_range_start:not(.navds-date-picker__day_range_end) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.navds-date-picker:not([dir="rtl"])
-  .navds-date-picker__day_range_end:not(.navds-date-picker__day_range_start) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.navds-date-picker[dir="rtl"]
-  .navds-date-picker__day_range_start:not(.navds-date-picker__day_range_end) {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.navds-date-picker[dir="rtl"]
-  .navds-date-picker__day_range_end:not(.navds-date-picker__day_range_start) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.navds-date-picker__day_range_end.navds-date-picker__day_range_start {
-  border-radius: 100%;
-}
-
 .navds-date-picker__day_range_middle {
-  border-radius: 0;
+  background-color: var(--navds-global-color-blue-50);
 }
+
+/* .navds-date-picker__day_range_end.navds-date-picker__day_range_start {
+  border-radius: 100%;
+} */
