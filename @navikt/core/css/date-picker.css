@@ -68,7 +68,7 @@
 }
 
 .navds-date-picker__button_reset[aria-disabled="true"] {
-  opacity: 0.25;
+  opacity: 1;
   pointer-events: none;
 }
 
@@ -248,14 +248,9 @@
 
 .navds-date-picker__cell {
   width: var(--navds-date-picker-cell-size);
-  height: 100%;
   height: var(--navds-date-picker-cell-size);
   padding: 0;
   text-align: center;
-}
-
-.navds-date-picker__weeknumber {
-  font-size: 0.75em;
 }
 
 .navds-date-picker__weeknumber,
@@ -274,16 +269,58 @@
   border-radius: 4px;
 }
 
+.navds-date-picker__weeknumber {
+  font-size: 0.75em;
+  color: var(--navds-semantic-color-text-muted);
+}
+
+.navds-date-picker__day[aria-disabled="true"] {
+  background: repeating-linear-gradient(
+    -45deg,
+    /* syntax: from color, to color, from color, to color, etc */
+      var(--navds-semantic-color-border-muted) 0px 1px,
+    white 1px 6px
+  );
+  border: 1px solid transparent;
+  border: none;
+  width: calc(2px + var(--navds-date-picker-cell-size));
+  height: calc(2px + var(--navds-date-picker-cell-size));
+}
+
+.navds-date-picker__day[aria-disabled="true"] > span {
+  background: white;
+  padding: 0px 5px;
+  border-radius: 4px;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+
 .navds-date-picker__day_today:not(.navds-date-picker__day_outside) {
   font-weight: 600;
 }
 
 /* ----- selected days (incl. range-start range-end), range middle ----- */
 
+/* 
+
+- Teamet til Gunn ønsket å kunne velge hele måneder, i tillegg til dager
+- Dagens dato tydeligere
+- Range mer tydelig
+- no outside days
+- Disabled state
+- Finne ut av UU
+
+*/
+
 /* .navds-date-picker__day_selected:not([aria-disabled="true"]),
 .navds-date-picker__day_selected:focus:not([aria-disabled="true"]),
 .navds-date-picker__day_selected:active:not([aria-disabled="true"]),
 .navds-date-picker__day_selected:hover:not([aria-disabled="true"]), */
+
+/* .navds-date-picker__day_disabled {
+  background-color: red;
+} */
 
 .navds-date-picker__day_range_start:not([aria-disabled="true"]),
 .navds-date-picker__day_range_end:not([aria-disabled="true"]) {
@@ -292,12 +329,16 @@
   font-weight: 600;
 }
 
-.navds-date-picker__day:hover:not(.navds-date-picker__day_range_start):not(.navds-date-picker__day_range_end):not([aria-disabled="true"]) {
+.navds-date-picker__day:hover:not([aria-disabled="true"]) {
   border: 1px solid var(--navds-semantic-color-interaction-primary-selected);
 }
 
 .navds-date-picker__day_range_middle {
   background-color: var(--navds-global-color-blue-50);
+}
+
+.navds-date-picker__day_outside {
+  background-color: var(--navds-semantic-color-border-muted);
 }
 
 /* .navds-date-picker__day_range_end.navds-date-picker__day_range_start {

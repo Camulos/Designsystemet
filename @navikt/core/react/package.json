@@ -45,7 +45,7 @@
     "classnames": "^2.2.6",
     "date-fns": "2.28.0",
     "react-collapse": "^5.1.0",
-    "react-day-picker": "^8.0.4",
+    "react-day-picker": "^8.0.5",
     "react-merge-refs": "^1.1.0",
     "react-modal": "3.14.3",
     "react-popper": "^2.2.5",
