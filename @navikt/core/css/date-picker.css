@@ -1,8 +1,8 @@
-/*=============================================
+/* =============================================
 *                                             *
 *                 date-picker                 *
 *                                             *
-*============================================*/
+*============================================ */
 
 :root {
   --navds-date-picker-cell-size: 46px;
@@ -18,17 +18,15 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  position: absolute !important;
+  position: absolute;
   top: 0;
-  width: 1px !important;
-  height: 1px !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  clip: rect(1px, 1px, 1px, 1px) !important;
-  border: 0 !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
-/*----------  Component wrappers  ----------*/
+/* ----------  Component wrappers  ---------- */
 .navds-date-picker__months {
   display: flex;
 }
@@ -45,9 +43,9 @@
   margin-right: 0;
 }
 
-/*===============================
+/* ===============================
 =        Button baseline        =
-===============================*/
+=============================== */
 .navds-date-picker__button_reset {
   appearance: none;
   position: relative;
@@ -58,7 +56,6 @@
   outline: none;
   background: none;
   font: inherit;
-
   -moz-appearance: none;
   -webkit-appearance: none;
 }
@@ -76,9 +73,9 @@
   cursor: pointer;
 }
 
-/*==============================================
+/* ==============================================
 =   Caption (heading, nav, label, dropdowns)   =
-==============================================*/
+============================================== */
 
 .navds-date-picker__caption {
   display: flex;
@@ -94,7 +91,7 @@
   text-align: center;
 }
 
-/*----------  Label  ----------*/
+/* ----------  Label  ---------- */
 
 .navds-date-picker__caption_label {
   position: relative;
@@ -112,7 +109,7 @@
   font-weight: bold;
 }
 
-/*----------  Navigation  ----------*/
+/* ----------  Navigation  ---------- */
 
 .navds-date-picker__nav {
   white-space: nowrap;
@@ -147,7 +144,7 @@
   border-radius: 100%;
 }
 
-/*----------  Dropdown  ----------*/
+/* ----------  Dropdown  ---------- */
 
 .navds-date-picker__caption_dropdowns {
   position: relative;
@@ -198,9 +195,9 @@
   margin: 0 0 0 5px;
 }
 
-/*=============================================
-=                    Table                    =
-=============================================*/
+/* =============================================
+=                    Table                     =
+============================================== */
 
 .navds-date-picker__table {
   margin: 0;
@@ -212,7 +209,7 @@
   max-width: calc(var(--navds-date-picker-cell-size) * 8);
 }
 
-/*----------  table thead, tbody and tfoot  ----------*/
+/* ----------  table thead, tbody and tfoot  ---------- */
 
 .navds-date-picker__thead {
   border: 0;
@@ -242,9 +239,9 @@
   border: 0;
 }
 
-/*============================================
-=        table cell (day, weeknumber)        =
-============================================*/
+/* ============================================
+=        table cell (day, weeknumber)         =
+============================================ */
 
 .navds-date-picker__cell {
   width: var(--navds-date-picker-cell-size);
@@ -278,7 +275,7 @@
   background: repeating-linear-gradient(
     -45deg,
     /* syntax: from color, to color, from color, to color, etc */
-      var(--navds-semantic-color-border-muted) 0px 1px,
+      var(--navds-semantic-color-border-muted) 0 1px,
     white 1px 6px
   );
   border: 1px solid transparent;
@@ -289,7 +286,7 @@
 
 .navds-date-picker__day[aria-disabled="true"] > span {
   background: white;
-  padding: 0px 5px;
+  padding: 0 5px;
   border-radius: 4px;
   align-items: center;
   display: inline-flex;
