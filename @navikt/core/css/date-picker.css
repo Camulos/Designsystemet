@@ -319,6 +319,7 @@
   background-color: red;
 } */
 
+.navds-date-picker__day_selected:not(.navds-date-picker__day_range_middle):not([aria-disabled="true"]),
 .navds-date-picker__day_range_start:not([aria-disabled="true"]),
 .navds-date-picker__day_range_end:not([aria-disabled="true"]) {
   color: var(--navds-semantic-color-text-inverted);

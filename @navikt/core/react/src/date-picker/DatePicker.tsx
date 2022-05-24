@@ -14,6 +14,10 @@ export const DatePicker = () => {
     from: april_3,
     to: addDays(april_3, 5),
   };
+
+  const [selectedDay, setSelectedDay] = useState<Date | undefined>(april_17);
+
+  /* ranged config */
   const defaultSelected: DateRange = {
     from: april_17,
     to: addMonths(april_17, 1),
@@ -23,17 +27,14 @@ export const DatePicker = () => {
 
   return (
     <DayPicker
-      showWeekNumber
-      captionLayout="dropdown"
-      mode="range"
-      disabled={disabledDays}
+      mode="single"
+      selected={selectedDay}
+      onSelect={setSelectedDay}
       classNames={datePickerClassNames}
+      numberOfMonths={1}
       defaultMonth={april_3}
-      selected={range}
-      footer={<Footer range={range} />}
-      numberOfMonths={2}
-      onSelect={setRange}
-      showOutsideDays
+      captionLayout="dropdown"
+      disabled={disabledDays}
     />
   );
 };
