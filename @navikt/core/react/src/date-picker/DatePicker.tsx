@@ -1,42 +1,29 @@
-import React, { useState } from "react";
-import { addMonths } from "date-fns";
-import { DateRange, DayPicker } from "react-day-picker";
-import Footer from "./Footer";
+import React from "react";
+import {
+  DateRange,
+  DayPicker,
+  DayPickerRangeProps,
+  DayPickerSingleProps,
+} from "react-day-picker";
 import datePickerClassNames from "./datePickerClassNames";
-import { addDays } from "date-fns/esm";
+import addMonths from "date-fns/esm/addMonths";
+import addDays from "date-fns/esm/addDays";
 
-export const DatePicker = () => {
-  // TODO: allow both Date and iso-string from user
-  const april_3 = new Date("2022-04-03");
-  const april_17 = new Date("2022-04-17");
+export type DatePickerModeType = "single" | "range";
 
-  const disabledDays: DateRange = {
-    from: april_3,
-    to: addDays(april_3, 5),
-  };
+type DatePickerProps = DayPickerSingleProps | DayPickerRangeProps;
 
-  const [selectedDay, setSelectedDay] = useState<Date | undefined>(april_17);
+/* TODO
+- setSelected må "types" eksplisitt fra brukerens side (se story). Kan vi sette det opp så brukeren ikke trenger å gjøre det?
+- eks: bruker må skrive 
+  const [selected, setSelected] = useState<   >>>>>DateRange<<<<<   >();
+*/
 
-  /* ranged config */
-  const defaultSelected: DateRange = {
-    from: april_17,
-    to: addMonths(april_17, 1),
-  };
-
-  const [range, setRange] = useState<DateRange | undefined>(defaultSelected);
-
-  return (
-    <DayPicker
-      mode="single"
-      selected={selectedDay}
-      onSelect={setSelectedDay}
-      classNames={datePickerClassNames}
-      numberOfMonths={1}
-      defaultMonth={april_3}
-      captionLayout="dropdown"
-      disabled={disabledDays}
-    />
-  );
+export const DatePicker = (props: DatePickerProps) => {
+  if (props?.selected == null) {
+  }
+  return <DayPicker classNames={datePickerClassNames} {...props} />;
 };
 
+export { DateRange, addDays, addMonths };
 export default DatePicker;
