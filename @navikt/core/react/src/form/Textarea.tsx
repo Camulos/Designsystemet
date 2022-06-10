@@ -1,8 +1,7 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState } from "react";
 import cl from "classnames";
 import TextareaAutosize from "@material-ui/core/TextareaAutosize";
-import { BodyShort, Label, omit } from "..";
-import ErrorMessage from "./ErrorMessage";
+import { BodyShort, Label, ErrorMessage, omit } from "..";
 import { FormFieldProps, useFormField } from "./useFormField";
 import { useId } from "..";
 
@@ -67,6 +66,10 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     const maxLengthId = `TextareaMaxLength-${useId()}`;
     const hasMaxLength = maxLength !== undefined && maxLength > 0;
 
+    const [controlledValue, setControlledValue] = useState<string>(
+      props?.defaultValue ?? ""
+    );
+
     return (
       <div
         className={cl(
@@ -105,6 +108,11 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           <TextareaAutosize
             {...omit(rest, ["error", "errorId", "size"])}
             {...inputProps}
+            onChange={(e) =>
+              props.onChange
+                ? props.onChange(e)
+                : setControlledValue(e.target.value)
+            }
             ref={ref}
             className={cl(
               "navds-textarea__input",
@@ -126,7 +134,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
               </span>
               <Counter
                 maxLength={maxLength}
-                currentLength={props.value?.length}
+                currentLength={props.value?.length ?? controlledValue?.length}
                 size={size}
               />
             </>
