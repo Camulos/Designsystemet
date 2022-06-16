@@ -1,5 +1,5 @@
 import { Placement } from "@popperjs/core";
-import cl from "classnames";
+import cl from "clsx";
 import React, {
   forwardRef,
   HTMLAttributes,

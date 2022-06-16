@@ -1,6 +1,6 @@
 import { Helptext as HelpTextIcon } from "@navikt/ds-icons";
 import { Placement } from "@popperjs/core";
-import cl from "classnames";
+import cl from "clsx";
 import React, { forwardRef, useRef, useState } from "react";
 import { Popover, PopoverProps, mergeRefs } from "..";
 

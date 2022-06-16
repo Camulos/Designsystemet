@@ -6,7 +6,7 @@ import {
   shift,
   useFloating,
 } from "@floating-ui/react-dom";
-import cl from "classnames";
+import cl from "clsx";
 import React, {
   cloneElement,
   forwardRef,
