@@ -10,7 +10,7 @@ export interface RadioProps
   /**
    * Radio label
    */
-  children: React.ReactNode;
+  children: string;
   /**
    * The value of the HTML element
    */

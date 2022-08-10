@@ -19,7 +19,7 @@ export interface CheckboxProps
   /**
    * Checkbox label
    */
-  children: React.ReactNode;
+  children: string;
   /**
    * Hides label and makes it viewable for screen-readers only.
    */
