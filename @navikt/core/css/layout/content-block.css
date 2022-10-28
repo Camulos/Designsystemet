@@ -1,0 +1,19 @@
+.navds-content-block {
+  margin: 0 auto;
+}
+
+.navds-content-block--xs {
+  max-width: var(--a-breakpoints-xs);
+}
+
+.navds-content-block--sm {
+  max-width: var(--a-breakpoints-sm);
+}
+
+.navds-content-block--md {
+  max-width: var(--a-breakpoints-md);
+}
+
+.navds-content-block--lg {
+  max-width: var(--a-breakpoints-lg);
+}
