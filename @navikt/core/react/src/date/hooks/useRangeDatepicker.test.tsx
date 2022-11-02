@@ -4,10 +4,17 @@ import userEvent from "@testing-library/user-event";
 import React from "react";
 import { UNSAFE_DatePicker, UNSAFE_useRangeDatepicker } from "..";
 
+import tk from "timekeeper";
+
+const today = new Date();
+beforeAll(() => tk.freeze(today));
+afterAll(() => tk.reset());
+
 const RangeDemo = () => {
   const { datepickerProps, fromInputProps, selectedRange, toInputProps } =
     UNSAFE_useRangeDatepicker({
       fromDate: new Date("Aug 23 2019"),
+      today,
     });
 
   return (
