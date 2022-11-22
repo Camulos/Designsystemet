@@ -1,8 +1,10 @@
 import { Calender } from "@navikt/ds-icons";
 import cl from "clsx";
 import React, { forwardRef, InputHTMLAttributes } from "react";
-import { BodyShort, Button, ErrorMessage, Label, omit } from "..";
+import { Button } from "../button";
 import { FormFieldProps, useFormField } from "../form/useFormField";
+import { BodyShort, ErrorMessage, Label } from "../typography";
+import { omit } from "../util";
 import { useDateInputContext } from "./hooks";
 
 export interface DateInputProps

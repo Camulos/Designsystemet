@@ -1,7 +1,7 @@
 import { Search } from "@navikt/ds-icons";
 import cl from "clsx";
 import React, { forwardRef, useContext } from "react";
-import { Button, ButtonProps } from "../..";
+import { Button, ButtonProps } from "../../button";
 import { SearchContext } from "./Search";
 
 export interface SearchButtonProps

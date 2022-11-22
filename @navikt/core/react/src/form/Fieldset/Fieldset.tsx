@@ -1,6 +1,7 @@
 import cl from "clsx";
 import React, { FieldsetHTMLAttributes, forwardRef, useContext } from "react";
-import { BodyLong, Detail, Label, ErrorMessage, omit } from "../..";
+import { BodyLong, Detail, ErrorMessage, Label } from "../../typography";
+import { omit } from "../../util";
 import { FormFieldProps } from "../useFormField";
 import { useFieldset } from "./useFieldset";
 

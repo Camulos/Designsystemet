@@ -1,6 +1,6 @@
 import React, { forwardRef, useContext } from "react";
 import cl from "clsx";
-import { BodyShort } from "..";
+import { BodyShort } from "../typography";
 import { TableContext } from "./Table";
 
 export interface DataCellProps

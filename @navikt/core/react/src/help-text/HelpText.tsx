@@ -1,7 +1,8 @@
 import { Helptext as HelpTextIcon, HelptextFilled } from "@navikt/ds-icons";
 import cl from "clsx";
 import React, { forwardRef, useMemo, useRef, useState } from "react";
-import { Popover, PopoverProps, mergeRefs } from "..";
+import { Popover, PopoverProps } from "../popover";
+import { mergeRefs } from "../util";
 
 export interface HelpTextProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,

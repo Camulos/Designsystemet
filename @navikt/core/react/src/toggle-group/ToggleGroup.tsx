@@ -1,13 +1,10 @@
 import cl from "clsx";
-import React, {
-  createContext,
-  forwardRef,
-  HTMLAttributes,
-  useState,
-} from "react";
+import React, { forwardRef, HTMLAttributes, useState } from "react";
 import ToggleItem, { ToggleItemType } from "./ToggleItem";
 import * as RadixToggleGroup from "@radix-ui/react-toggle-group";
-import { Label, useId } from "..";
+import { useId } from "../util";
+import { Label } from "../typography";
+import { ToggleGroupContext } from "./context";
 
 export interface ToggleGroupProps
   extends Omit<HTMLAttributes<HTMLDivElement>, "onChange" | "dir"> {
@@ -44,14 +41,6 @@ interface ToggleGroupComponent
   > {
   Item: ToggleItemType;
 }
-
-interface ToggleContextProps {
-  size: "medium" | "small";
-}
-
-export const ToggleGroupContext = createContext<ToggleContextProps | null>(
-  null
-);
 
 export const ToggleGroup = forwardRef<HTMLDivElement, ToggleGroupProps>(
   (

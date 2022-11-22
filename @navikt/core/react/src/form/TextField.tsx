@@ -1,7 +1,8 @@
 import React, { forwardRef, InputHTMLAttributes } from "react";
 import cl from "clsx";
-import { BodyLong, Detail, Label, ErrorMessage, omit } from "..";
+import { omit } from "../util";
 import { FormFieldProps, useFormField } from "./useFormField";
+import { BodyLong, Detail, ErrorMessage, Label } from "../typography";
 
 export interface TextFieldProps
   extends FormFieldProps,

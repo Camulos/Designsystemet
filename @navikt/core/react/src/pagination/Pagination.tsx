@@ -1,7 +1,7 @@
 import React, { forwardRef } from "react";
 import cl from "clsx";
 import { Back, Next } from "@navikt/ds-icons";
-import { BodyShort } from "..";
+import { BodyShort } from "../typography";
 import PaginationItem, {
   PaginationItemProps,
   PaginationItemType,

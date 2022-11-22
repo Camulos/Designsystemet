@@ -1,9 +1,15 @@
 import React, { forwardRef, useState } from "react";
 import cl from "clsx";
-import { BodyShort, BodyLong, Label, ErrorMessage, omit, Detail } from "..";
+import { omit, useId } from "../util";
 import { FormFieldProps, useFormField } from "./useFormField";
-import { useId } from "..";
 import TextareaAutosize from "../util/TextareaAutoSize";
+import {
+  BodyLong,
+  BodyShort,
+  Detail,
+  ErrorMessage,
+  Label,
+} from "../typography";
 
 /**
  * TODO: Mulighet for lokalisering av sr-only/counter text

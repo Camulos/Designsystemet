@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 import cl from "clsx";
-import { OverridableComponent } from "..";
+import { OverridableComponent } from "../util";
 
 export interface BodyShortProps
   extends React.HTMLAttributes<HTMLParagraphElement> {

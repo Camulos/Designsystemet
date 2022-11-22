@@ -2,8 +2,10 @@ import React, { forwardRef, useEffect, useMemo, useRef } from "react";
 import cl from "clsx";
 import ReactModal from "react-modal";
 import { Close } from "@navikt/ds-icons";
-import { Button, mergeRefs, useProvider } from "..";
+import { mergeRefs } from "../util";
 import ModalContent, { ModalContentType } from "./ModalContent";
+import { useProvider } from "../provider";
+import { Button } from "../button";
 
 export interface ModalProps {
   /**

@@ -1,7 +1,9 @@
 import React, { forwardRef } from "react";
 import cl from "clsx";
-import { BodyLong, Checkbox, CheckboxProps, ErrorMessage, useId } from "..";
 import { useFormField } from "./useFormField";
+import { Checkbox, CheckboxProps } from "./checkbox";
+import { useId } from "../util";
+import { BodyLong, ErrorMessage } from "../typography";
 
 export interface ConfirmationPanelProps
   extends Omit<

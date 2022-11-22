@@ -5,7 +5,9 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { BodyShort, Detail, Loader, omit } from "..";
+import { Loader } from "../loader";
+import { BodyShort, Detail } from "../typography";
+import { omit } from "../util";
 import { FormFieldProps, useFormField } from "./useFormField";
 
 const SelectedIcon = () => (

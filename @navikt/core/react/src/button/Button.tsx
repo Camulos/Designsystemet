@@ -1,7 +1,9 @@
 import React, { useRef, useState, forwardRef, useMemo } from "react";
 import cl from "clsx";
-import { OverridableComponent, Loader, mergeRefs, Label } from "../";
+import { OverridableComponent, mergeRefs } from "../util";
+import { Loader } from "../loader";
 import { omit, useClientLayoutEffect } from "../util";
+import { Label } from "../typography";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

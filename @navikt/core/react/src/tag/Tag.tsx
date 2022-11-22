@@ -1,6 +1,6 @@
 import React, { forwardRef, HTMLAttributes } from "react";
 import cl from "clsx";
-import { BodyShort, Detail } from "..";
+import { BodyShort, Detail } from "../typography";
 
 export interface TagProps extends HTMLAttributes<HTMLSpanElement> {
   children: React.ReactNode;

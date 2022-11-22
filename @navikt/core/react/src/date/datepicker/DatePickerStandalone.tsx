@@ -9,7 +9,7 @@ import {
   SelectRangeEventHandler,
   SelectSingleEventHandler,
 } from "react-day-picker";
-import { omit } from "../..";
+import { omit } from "../../util";
 import { getLocaleFromString, labels } from "../utils";
 import { Caption, DropdownCaption } from "./caption";
 import { ConditionalModeProps, DatePickerDefaultProps } from "./DatePicker";

@@ -17,7 +17,7 @@ import React, {
   useMemo,
   useRef,
 } from "react";
-import { mergeRefs } from "..";
+import { mergeRefs } from "../util";
 import { useClientLayoutEffect, useEventListener } from "../util";
 import PopoverContent, { PopoverContentType } from "./PopoverContent";
 
