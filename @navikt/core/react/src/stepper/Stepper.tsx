@@ -1,6 +1,7 @@
-import React, { createContext, forwardRef } from "react";
+import React, { forwardRef } from "react";
 import cl from "clsx";
 import Step, { StepperStepProps, StepperStepType } from "./Step";
+import { StepperContext } from "./context";
 
 export interface StepperProps extends React.HTMLAttributes<HTMLOListElement> {
   /**
@@ -35,16 +36,6 @@ interface StepperComponent
   > {
   Step: StepperStepType;
 }
-
-interface StepperContextProps {
-  activeStep: number;
-  onStepChange: (step: number) => void;
-  lastIndex: number;
-  orientation: "horizontal" | "vertical";
-  interactive: boolean;
-}
-
-export const StepperContext = createContext<StepperContextProps | null>(null);
 
 export const Stepper: StepperComponent = forwardRef<
   HTMLOListElement,

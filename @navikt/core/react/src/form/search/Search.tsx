@@ -12,6 +12,7 @@ import { Label, BodyShort, ErrorMessage } from "../../typography";
 import { mergeRefs, useEventListener, omit } from "../../util";
 
 import { FormFieldProps, useFormField } from "../useFormField";
+import { SearchContext } from "./context";
 import SearchButton, { SearchButtonType } from "./SearchButton";
 
 export type SearchClearEvent =
@@ -66,16 +67,6 @@ interface SearchComponent
   > {
   Button: SearchButtonType;
 }
-
-export interface SearchContextProps {
-  disabled?: boolean;
-  size: "medium" | "small";
-  variant: "primary" | "secondary" | "simple";
-}
-
-export const SearchContext = React.createContext<SearchContextProps | null>(
-  null
-);
 
 export const Search = forwardRef<HTMLInputElement, SearchProps>(
   (props, ref) => {

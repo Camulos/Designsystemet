@@ -1,6 +1,6 @@
 import React, { forwardRef, useContext } from "react";
 import cl from "clsx";
-import { TableContext } from "./Table";
+import { TableContext } from "./context";
 
 export interface HeaderCellProps
   extends React.ThHTMLAttributes<HTMLTableCellElement> {

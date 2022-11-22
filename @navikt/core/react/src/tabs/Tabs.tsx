@@ -1,9 +1,10 @@
 import cl from "clsx";
-import React, { createContext, forwardRef, HTMLAttributes } from "react";
+import React, { forwardRef, HTMLAttributes } from "react";
 import * as RadixTabs from "@radix-ui/react-tabs";
 import Tab, { TabType } from "./Tab";
 import TabList, { TabListType } from "./TabList";
 import TabPanel, { TabPanelType } from "./TabPanel";
+import { TabsContext } from "./context";
 
 export interface TabsProps
   extends Omit<HTMLAttributes<HTMLDivElement>, "onChange" | "dir"> {
@@ -50,14 +51,6 @@ interface TabsComponent
   List: TabListType;
   Panel: TabPanelType;
 }
-
-interface TabsContextProps {
-  size: "medium" | "small";
-  loop: boolean;
-  iconPosition: "left" | "top";
-}
-
-export const TabsContext = createContext<TabsContextProps | null>(null);
 
 export const Tabs = forwardRef<HTMLDivElement, TabsProps>(
   (

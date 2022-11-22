@@ -1,4 +1,4 @@
-import React, { createContext, forwardRef } from "react";
+import React, { forwardRef } from "react";
 import cl from "clsx";
 import Header, { HeaderType } from "./Header";
 import Body, { BodyType } from "./Body";
@@ -7,11 +7,7 @@ import ColumnHeader, { ColumnHeaderType } from "./ColumnHeader";
 import HeaderCell, { HeaderCellType } from "./HeaderCell";
 import DataCell, { DataCellType } from "./DataCell";
 import ExpandableRow, { ExpandableRowType } from "./ExpandableRow";
-
-export interface SortState {
-  orderBy: string;
-  direction: "ascending" | "descending";
-}
+import { SortState, TableContext } from "./context";
 
 export interface TableProps
   extends React.TableHTMLAttributes<HTMLTableElement> {
@@ -47,14 +43,6 @@ export interface TableType
   ColumnHeader: ColumnHeaderType;
   ExpandableRow: ExpandableRowType;
 }
-
-export interface TableContextProps {
-  size: "medium" | "small";
-  onSortChange?: (sortKey: string) => void;
-  sort?: SortState;
-}
-
-export const TableContext = createContext<TableContextProps | null>(null);
 
 export const Table = forwardRef(
   (

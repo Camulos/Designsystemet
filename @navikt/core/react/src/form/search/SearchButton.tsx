@@ -2,7 +2,7 @@ import { Search } from "@navikt/ds-icons";
 import cl from "clsx";
 import React, { forwardRef, useContext } from "react";
 import { Button, ButtonProps } from "../../button";
-import { SearchContext } from "./Search";
+import { SearchContext } from "./context";
 
 export interface SearchButtonProps
   extends Omit<ButtonProps, "size" | "children" | "variant"> {
