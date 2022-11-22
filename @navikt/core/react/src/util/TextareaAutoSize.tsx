@@ -7,7 +7,9 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { debounce, mergeRefs, useClientLayoutEffect } from "..";
+import { useClientLayoutEffect } from "./clientLayoutEffect";
+import debounce from "./debounce";
+import mergeRefs from "./mergeRefs";
 
 /**
  * https://github.com/mui/material-ui/blob/master/packages/mui-utils/src/ownerDocument.ts

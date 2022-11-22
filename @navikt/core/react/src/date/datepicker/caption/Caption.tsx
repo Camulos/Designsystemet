@@ -1,7 +1,8 @@
 import { Left, Right } from "@navikt/ds-icons";
 import React from "react";
 import { CaptionProps, useDayPicker, useNavigation } from "react-day-picker";
-import { Button, Label } from "../../..";
+import { Button } from "../../../button";
+import { Label } from "../../../typography";
 
 export const DatePickerCaption = ({ displayMonth, id }: CaptionProps) => {
   const { goToMonth, nextMonth, previousMonth } = useNavigation();
