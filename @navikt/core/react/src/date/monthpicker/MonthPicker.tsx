@@ -1,7 +1,8 @@
 import cl from "clsx";
 import React, { forwardRef, useRef, useState } from "react";
 import { RootProvider } from "react-day-picker";
-import { Popover, useId } from "../..";
+import { Popover } from "../../popover";
+import { useId } from "../../util";
 import { DateInputType, MonthPickerInput } from "../DateInput";
 import { DateContext, SharedMonthProvider } from "../hooks";
 import { getLocaleFromString, Matcher } from "../utils";

@@ -1,8 +1,9 @@
 import React, { forwardRef, InputHTMLAttributes } from "react";
 import cl from "clsx";
-import { BodyShort, Detail, omit } from "../..";
 import { FormFieldProps } from "../useFormField";
 import { useRadio } from "./useRadio";
+import { BodyShort, Detail } from "../../typography";
+import { omit } from "../../util";
 
 export interface RadioProps
   extends Omit<FormFieldProps, "error" | "errorId">,

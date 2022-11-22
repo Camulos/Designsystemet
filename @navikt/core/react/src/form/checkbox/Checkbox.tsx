@@ -2,7 +2,8 @@ import React, { forwardRef, InputHTMLAttributes } from "react";
 import cl from "clsx";
 import useCheckbox from "./useCheckbox";
 import { FormFieldProps } from "../useFormField";
-import { BodyShort, Detail, omit } from "../..";
+import { BodyShort, Detail } from "../../typography";
+import { omit } from "../../util";
 
 export interface CheckboxProps
   extends FormFieldProps,

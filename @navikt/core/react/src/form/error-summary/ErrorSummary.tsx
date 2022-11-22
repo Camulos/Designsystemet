@@ -1,8 +1,8 @@
 import React, { forwardRef, HTMLAttributes } from "react";
 import cl from "clsx";
-import { Heading, BodyShort } from "../..";
 import ErrorSummaryItem, { ErrorSummaryItemType } from "./ErrorSummaryItem";
 import { useId } from "../../util";
+import { BodyShort, Heading } from "../../typography";
 
 export interface ErrorSummaryProps extends HTMLAttributes<HTMLDivElement> {
   /**

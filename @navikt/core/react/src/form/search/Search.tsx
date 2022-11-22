@@ -8,14 +8,9 @@ import React, {
   useRef,
   useState,
 } from "react";
-import {
-  BodyShort,
-  ErrorMessage,
-  Label,
-  mergeRefs,
-  omit,
-  useEventListener,
-} from "../..";
+import { Label, BodyShort, ErrorMessage } from "../../typography";
+import { mergeRefs, useEventListener, omit } from "../../util";
+
 import { FormFieldProps, useFormField } from "../useFormField";
 import SearchButton, { SearchButtonType } from "./SearchButton";
 

@@ -3,7 +3,8 @@ import setMonth from "date-fns/setMonth";
 import setYear from "date-fns/setYear";
 import startOfMonth from "date-fns/startOfMonth";
 import React, { useState } from "react";
-import { BodyShort } from "../..";
+import { BodyShort } from "../../typography";
+
 import { useSharedMonthContext } from "../hooks";
 import { isMatch } from "../utils";
 import MonthButton from "./MonthButton";
